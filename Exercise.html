@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài thi</title>
+    <link rel="stylesheet" href="Style exercise.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>
+        Bài thi của thí sinh
+        <script>
+            let data = window.location.search;
+            let params = new URLSearchParams(data);
+            document.write(params.get("ten"));
+        </script><br>
+    </h1>
+    <table>
+        <tr>
+            <th>
+                Mã sinh viên
+            </th>
+            <th>
+                Lớp
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <script>
+                    document.write(params.get("msv"));
+                </script>
+            </td>
+            <td>
+                <script>
+                    document.write(params.get("lop"));
+                </script>
+            </td>
+        </tr>
+    </table>
+    <h2>Đề bài</h2>
+    <form>
+        <h3>Nhóm câu hỏi 1</h3>
+        <div class="cauhoi1">
+        <div>
+            <h4>Câu 1: </h4>
+            <input type="radio" name="cau1" value="true">Đúng
+            <input type="radio" name="cau1" value="false">Sai
+        </div>
+        
+        <script>
+            var numOfDivs = 10; // Số lượng div bạn muốn tạo
+    
+            for (var i = 2; i <= numOfDivs ; i++) {
+                document.write('<div>');
+                document.write('<h4>Câu ' + i + ': </h4>');
+                document.write('<input type="radio" name="cau' + i + '" value="true">Đúng');
+                document.write('<input type="radio" name="cau' + i + '" value="false">Sai');
+                document.write('</div>');
+            }
+        </script>
+        </div>
+
+        <h3>Nhóm câu hỏi 2</h3>
+        <div class="cauhoi2">
+        <script>
+            var numOfDivs = 20; // Số lượng div bạn muốn tạo
+
+            for (var i = 11; i <= numOfDivs ; i++) {
+                document.write('<div>');
+                document.write('<h4>Câu ' + i + ': </h4>');
+                document.write('<input type="radio" name="cau' + i + '" value="A">A. Đáp án 1');
+                document.write('<input type="radio" name="cau' + i + '" value="B">B. Đáp án 2');
+                document.write('<input type="radio" name="cau' + i + '" value="C">C. Đáp án 3');
+                document.write('<input type="radio" name="cau' + i + '" value="D">D. Đáp án 4');
+                document.write('</div>');
+            }
+        </script>
+        </div>
+
+        <h3>Nhóm câu hỏi 3</h3>
+        <div class="cauhoi3">
+        <script>
+            var numOfDivs = 30; // Số lượng div bạn muốn tạo
+
+            for (var i = 21; i <= numOfDivs ; i++) {
+                document.write('<div>');
+                document.write('<h4>Câu ' + i + ': </h4>');
+                document.write('<input type="checkbox" name="cau' + i + 'A" value="A">A. Đáp án 1');
+                document.write('<input type="checkbox" name="cau' + i + 'B" value="B">B. Đáp án 2');
+                document.write('<input type="checkbox" name="cau' + i + 'C" value="C">C. Đáp án 3');
+                document.write('<input type="checkbox" name="cau' + i + 'D" value="D">D. Đáp án 4');
+                document.write('<br>');
+                document.write('</div>');
+            }
+        </script>
+        </div>
+
+        <h3>Nhóm câu hỏi 4</h3>
+        <div class="cauhoi4">
+        <script>
+            var numOfDivs = 40; // Số lượng div bạn muốn tạo
+
+            for (var i = 31; i <= numOfDivs ; i++) {
+                document.write('<div>');
+                document.write('<h4>Câu ' + i + ': </h4>');
+                document.write('<input type="text" name="cau' + i + '" value=""">');
+                document.write('</div>');
+            }
+        </script>
+        </div>
+    <button onclick="checkAnswer()">Nộp bài
+    </form>
+
+
+
+</body>
+</html>
