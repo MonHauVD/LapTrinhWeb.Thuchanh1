@@ -8,7 +8,8 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <h1>
+    
+    <!-- <h1>
         Bài thi của thí sinh
         <script>
             let data = window.location.search;
@@ -38,27 +39,58 @@
             </td>
         </tr>
     </table>
-    <h2>Đề bài</h2>
+    <h2>Đề bài</h2> -->
     <form>
+        <h1>
+            Bài thi của thí sinh
+            <script>
+                let data = window.location.search;
+                let params = new URLSearchParams(data);
+                document.write(params.get("ten"));
+            </script><br>
+        </h1>
+        <table>
+            <tr>
+                <th>
+                    Mã sinh viên: 
+                </th>
+                <td>
+                    <script>
+                        document.write(params.get("msv"));
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Lớp: 
+                </th>
+                <td>
+                    <script>
+                        document.write(params.get("lop"));
+                    </script>
+                </td>
+            </tr>
+        </table>
+
         <h3>Nhóm câu hỏi 1</h3>
         <div class="cauhoi1">
-        <div>
-            <h4>Câu 1: </h4>
-            <input type="radio" name="cau1" value="true">Đúng
-            <input type="radio" name="cau1" value="false">Sai
-        </div>
+            <div>
+                <h4>Câu 1: </h4>
+                <input type="radio" name="cau1" value="true">Đúng
+                <input type="radio" name="cau1" value="false">Sai
+            </div>
+            
+            <script>
+                var numOfDivs = 10; // Số lượng div bạn muốn tạo
         
-        <script>
-            var numOfDivs = 10; // Số lượng div bạn muốn tạo
-    
-            for (var i = 2; i <= numOfDivs ; i++) {
-                document.write('<div>');
-                document.write('<h4>Câu ' + i + ': </h4>');
-                document.write('<input type="radio" name="cau' + i + '" value="true">Đúng');
-                document.write('<input type="radio" name="cau' + i + '" value="false">Sai');
-                document.write('</div>');
-            }
-        </script>
+                for (var i = 2; i <= numOfDivs ; i++) {
+                    document.write('<div>');
+                    document.write('<h4>Câu ' + i + ': </h4>');
+                    document.write('<input type="radio" name="cau' + i + '" value="true">Đúng');
+                    document.write('<input type="radio" name="cau' + i + '" value="false">Sai');
+                    document.write('</div>');
+                }
+            </script>
         </div>
 
         <h3>Nhóm câu hỏi 2</h3>
@@ -109,7 +141,7 @@
             }
         </script>
         </div>
-    <button onclick="checkAnswer()">Nộp bài
+        <button onclick="checkAnswer()">Nộp bài
     </form>
 
 
